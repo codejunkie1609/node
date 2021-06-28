@@ -84,7 +84,7 @@ function authentication(req, res, next) {
     var user = auth[0]
     var pass = auth[1]
     
-    if (user.compareLocale('charan') && pass.compareLocale('1234')) {
+    if (user==='charan' && pass==='1234') {
         next();
     } else {
         var err = new Error('You are not authenticated!');
