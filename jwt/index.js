@@ -70,7 +70,7 @@ app.post('/login',(req,res) => {
 function authentication(req, res, next) {
     var authheader = req.headers.authorization;
     
-    console.log(authheader)
+    
     if (!authheader) {
         var err = new Error('You are not authenticated!');
         res.setHeader('WWW-Authenticate', 'Basic');
@@ -80,7 +80,7 @@ function authentication(req, res, next) {
    
     var auth = new Buffer.from(authheader.split(' ')[1],
     'base64').toString().split(':');
-    console.log(auth)
+  
     var user = auth[0]
     var pass = auth[1]
     
